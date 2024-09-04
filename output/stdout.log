@@ -1,0 +1,91 @@
+
+Collecting tasks from: tasks.py
+=================== Running: [96morder_robots_from_RobotSpareBin[0m ===================
+File downloaded successfully: output/orders.csv
+[96morder_robots_from_RobotSpareBin[0m status: [91mFAIL
+[0m[91m
+Message: element click intercepted: Element is not clickable at point (273, 1021)
+  (Session info: chrome=128.0.6613.84)
+Stacktrace:
+#0 0x57288423295f <unknown>
+#1 0x572883eeb4dd <unknown>
+#2 0x572883f41888 <unknown>
+#3 0x572883f3f47e <unknown>
+#4 0x572883f3cdc9 <unknown>
+#5 0x572883f3c165 <unknown>
+#6 0x572883f2f8f4 <unknown>
+#7 0x572883f60f52 <unknown>
+#8 0x572883f2f252 <unknown>
+#9 0x572883f6111e <unknown>
+#10 0x572883f80a0e <unknown>
+#11 0x572883f60cd3 <unknown>
+#12 0x572883f2d55d <unknown>
+#13 0x572883f2e2ef <unknown>
+#14 0x5728841fe0a2 <unknown>
+#15 0x572884201486 <unknown>
+#16 0x572884200eca <unknown>
+#17 0x572884201945 <unknown>
+#18 0x5728841ee48b <unknown>
+#19 0x572884201d13 <unknown>
+#20 0x5728841d8a0f <unknown>
+#21 0x572884221807 <unknown>
+#22 0x572884221a4b <unknown>
+#23 0x57288423161a <unknown>
+#24 0x73c7855f439d <unknown>
+#25 0x73c78567949c <unknown>
+
+[0m=========== Full Traceback (running [96morder_robots_from_RobotSpareBin[0m) ===========
+[91mTraceback (most recent call last):
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/tasks/_commands.py", line 453, in run
+    result = task.run(**kwargs)
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/tasks/_task.py", line 57, in run
+    return self.method(**kwargs)
+  File "/home/renan/thoughtful/robocorp_certifs/1/tasks.py", line 102, in order_robots_from_RobotSpareBin
+    fill_the_form(browser, order)
+  File "/home/renan/thoughtful/robocorp_certifs/1/tasks.py", line 58, in fill_the_form
+    browser.wait_and_click_button("xpath://button[@id='order']")
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/RPA/Browser/Selenium.py", line 1210, in click_button_when_visible
+    self.click_button(locator, modifier)
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/SeleniumLibrary/keywords/element.py", line 603, in click_button
+    element.click()
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 394, in _execute
+    return self._parent.execute(command, params)
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (273, 1021)
+  (Session info: chrome=128.0.6613.84)
+Stacktrace:
+#0 0x57288423295f <unknown>
+#1 0x572883eeb4dd <unknown>
+#2 0x572883f41888 <unknown>
+#3 0x572883f3f47e <unknown>
+#4 0x572883f3cdc9 <unknown>
+#5 0x572883f3c165 <unknown>
+#6 0x572883f2f8f4 <unknown>
+#7 0x572883f60f52 <unknown>
+#8 0x572883f2f252 <unknown>
+#9 0x572883f6111e <unknown>
+#10 0x572883f80a0e <unknown>
+#11 0x572883f60cd3 <unknown>
+#12 0x572883f2d55d <unknown>
+#13 0x572883f2e2ef <unknown>
+#14 0x5728841fe0a2 <unknown>
+#15 0x572884201486 <unknown>
+#16 0x572884200eca <unknown>
+#17 0x572884201945 <unknown>
+#18 0x5728841ee48b <unknown>
+#19 0x572884201d13 <unknown>
+#20 0x5728841d8a0f <unknown>
+#21 0x572884221807 <unknown>
+#22 0x572884221a4b <unknown>
+#23 0x57288423161a <unknown>
+#24 0x73c7855f439d <unknown>
+#25 0x73c78567949c <unknown>
+
+
+[0m================================================================================
+Robocorp Log (html): /home/renan/thoughtful/robocorp_certifs/1/output/log.html

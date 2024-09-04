@@ -1,0 +1,6 @@
+ORDERS_LINK = 'https://robotsparebinindustries.com/orders.csv'
+OUTPUT_DIR = 'output'
+ORDERS_PATH = 'output/orders.csv'
+RECEIPTS_DIR = 'output/receipts'
+COMPANY_PATH = 'https://robotsparebinindustries.com/#/robot-order'
+ZIP_PATH = 'output/receipts.zip'

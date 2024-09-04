@@ -1,0 +1,669 @@
+V 0.0.4
+T 2024-09-04T16:32:33.253+00:00
+ID 1|495602a4-6adb-11ef-9370-144f8aa7bd4f
+I "sys.platform=linux"
+I "python=3.10.12 | packaged by conda-forge | (main, Jun 23 2023, 22:40:32) [GCC 12.3.0]"
+M a:"tasks.py"
+SR a|0.007
+M c:"Collect tasks"
+M d:"setup"
+M e:""
+P b:c|d|e|e|0
+ST b|0.008
+M f:"regular"
+M g:"\nCollecting tasks from: tasks.py\n"
+C f|g|0.008
+M h:"stderr"
+M i:"2024-09-04 13:32:36,313 - RPA.core.certificates - INFO - Truststore injection done, using system certificate store to validate HTTPS.\n"
+C h|i|3.06
+M j:"PASS"
+ET j|e|10.888
+M l:"order_robots_from_RobotSpareBin"
+M m:"tasks"
+M n:"/home/renan/thoughtful/robocorp_certifs/1/tasks.py"
+M o:"\n    Orders robots from RobotSpareBin Industries Inc.\n    Saves the order HTML receipt as a PDF file.\n    Saves the screenshot of the ordered robot.\n    Embeds the screenshot of the robot to the PDF receipt.\n    Creates ZIP archive of the receipts and the images.\n    "
+P k:l|m|n|o|85
+ST k|10.888
+M p:"=================== "
+C f|p|10.888
+M q:"Running: "
+C f|q|10.888
+M r:"task_name"
+C r|l|10.888
+M s:" ===================\n"
+C f|s|10.889
+M t:"METHOD"
+SE k|t|10.889
+M v:"get_orders"
+P u:v|m|n|e|30
+SE u|t|10.889
+M x:"download_orders_csv"
+P w:x|m|n|e|10
+SE w|t|10.89
+M z:"HTTP.__init__"
+M A:"RPA.HTTP"
+M B:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/RPA/HTTP.py"
+P y:z|A|B|e|91
+SE y|t|10.89
+M C:"args"
+M D:"tuple"
+M E:"()"
+EA C|D|E
+M F:"kwargs"
+M G:"dict"
+M H:"{}"
+EA F|G|H
+EE t|j|10.89
+P I:x|m|n|e|16
+M J:"http"
+M K:"HTTP"
+M L:"<RPA.HTTP.HTTP object at 0x7bfd70ae31f0>"
+AS I|J|K|L|10.89
+M N:"if os.path.exists(ORDERS_PATH)"
+P M:N|m|n|e|20
+M O:"IF_SCOPE"
+SE M|O|10.891
+M P:"ORDERS_PATH"
+M Q:"str"
+M R:"'output/orders.csv'"
+EA P|Q|R
+EE O|j|10.891
+M T:"HTTP.download"
+P S:T|A|B|e|188
+SE S|t|10.891
+M U:"url"
+M V:"'https://robotsparebinindustries.com/orders.csv'"
+EA U|Q|V
+M W:"target_file"
+EA W|Q|R
+M X:"verify"
+M Y:"bool"
+M Z:"True"
+EA X|Y|Z
+M 0:"force_new_session"
+M 1:"False"
+EA 0|Y|1
+M 2:"overwrite"
+EA 2|Y|1
+M 3:"stream"
+EA 3|Y|1
+EA F|G|H
+P 4:T|A|B|e|260
+M 5:"Response"
+M 6:"<Response [200]>"
+R 4|5|6|11.061
+EE t|j|11.061
+P 7:N|m|n|e|25
+SE 7|O|11.061
+EA P|Q|R
+M 8:"stdout"
+M 9:"File downloaded successfully: output/orders.csv"
+C 8|9|11.062
+M aa:"\n"
+C 8|aa|11.062
+EE O|j|11.062
+EE t|j|11.062
+M ac:"Tables.__init__"
+M ad:"RPA.Tables"
+M ae:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/RPA/Tables.py"
+P ab:ac|ad|ae|e|989
+SE ab|t|11.063
+EE t|j|11.064
+P af:v|m|n|e|36
+M ag:"tables"
+M ah:"Tables"
+M ai:"<RPA.Tables.Tables object at 0x7bfd73c4eb30>"
+AS af|ag|ah|ai|11.064
+M ak:"Tables.read_table_from_csv"
+P aj:ak|ad|ae|e|1856
+SE aj|t|11.065
+M al:"path"
+EA al|Q|R
+M am:"header"
+EA am|Y|Z
+M an:"columns"
+M ao:"NoneType"
+M ap:"None"
+EA an|ao|ap
+M aq:"dialect"
+EA aq|ao|ap
+M ar:"delimiters"
+EA ar|ao|ap
+M as:"column_unknown"
+M at:"'Unknown'"
+EA as|Q|at
+M au:"encoding"
+EA au|ao|ap
+P av:ak|ad|ae|e|1940
+M aw:"Table"
+M ax:"Table(columns=['Order number', 'Head', 'Body', 'Legs', 'Address'], rows=20)"
+R av|aw|ax|11.073
+EE t|j|11.073
+P ay:v|m|n|e|37
+M az:"orders"
+AS ay|az|aw|ax|11.073
+P aA:v|m|n|e|38
+R aA|aw|ax|11.074
+EE t|j|11.074
+P aB:l|m|n|e|93
+AS aB|az|aw|ax|11.074
+M aD:"Selenium.__init__"
+M aE:"RPA.Browser.Selenium"
+M aF:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/RPA/Browser/Selenium.py"
+P aC:aD|aE|aF|e|241
+SE aC|t|11.075
+EA C|D|E
+M aG:"{'timeout': 10, 'page_load_timeout': 10}"
+EA F|G|aG
+EE t|j|11.204
+P aH:l|m|n|e|95
+M aI:"browser"
+M aJ:"Selenium"
+M aK:"<RPA.Browser.Selenium.Selenium object at 0x7bfd73c4eb30>"
+AS aH|aI|aJ|aK|11.204
+M aM:"wrapper"
+M aN:"RPA.Browser.common"
+M aO:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/RPA/Browser/common.py"
+P aL:aM|aN|aO|e|33
+SE aL|t|11.204
+M aP:"(<RPA.Browser.Selenium.Selenium object at 0x7bfd73c4eb30>, 'https://robotsparebinindustries.com/#/robot-order')"
+EA C|D|aP
+EA F|G|H
+P aQ:aM|aN|aO|e|36
+M aR:"int"
+M aS:"1"
+R aQ|aR|aS|14.543
+EE t|j|14.543
+M aU:"for order in orders"
+P aT:aU|m|n|e|100
+M aV:"FOR"
+SE aT|aV|14.544
+M aX:"Table.iter_dicts"
+P aW:aX|ad|ae|e|827
+M aY:"UNTRACKED_GENERATOR"
+SE aW|aY|14.544
+M aZ:"with_index"
+EA aZ|Y|1
+M a1:"Step: for order in orders"
+P a0:a1|m|n|e|100
+M a2:"FOR_STEP"
+SE a0|a2|14.544
+M a3:"order"
+M a4:"{'Order number': '1', 'Head': '1', 'Body': '2', 'Legs': '3', 'Address': 'Address 123'}"
+EA a3|G|a4
+M a6:"close_annoying_modal"
+P a5:a6|m|n|e|40
+SE a5|t|14.544
+EA aI|aJ|aK
+M a8:"ElementKeywords.click_button"
+M a9:"SeleniumLibrary.keywords.element"
+M ba:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/SeleniumLibrary/keywords/element.py"
+P a7:a8|a9|ba|e|584
+SE a7|t|14.545
+M bb:"locator"
+M bc:"'OK'"
+EA bb|Q|bc
+M bd:"modifier"
+EA bd|Y|1
+EE t|j|14.638
+EE t|j|14.638
+M bf:"fill_the_form"
+P be:bf|m|n|e|46
+SE be|t|14.638
+EA aI|aJ|aK
+EA a3|G|a4
+M bh:"SelectElementKeywords.select_from_list_by_value"
+M bi:"SeleniumLibrary.keywords.selectelement"
+M bj:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/SeleniumLibrary/keywords/selectelement.py"
+P bg:bh|bi|bj|e|234
+SE bg|t|14.638
+M bk:"\"xpath://select[@id='head']\""
+EA bb|Q|bk
+M bl:"values"
+M bm:"('1',)"
+EA bl|D|bm
+EE t|j|14.778
+M bo:"ElementKeywords.click_element"
+P bn:bo|a9|ba|e|654
+SE bn|t|14.779
+M bp:"\"xpath://input[@id='id-body-2']\""
+EA bb|Q|bp
+EA bd|Y|1
+M bq:"action_chain"
+EA bq|Y|1
+EE t|j|14.878
+M bs:"FormElementKeywords.input_text"
+M bt:"SeleniumLibrary.keywords.formelement"
+M bu:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/SeleniumLibrary/keywords/formelement.py"
+P br:bs|bt|bu|e|272
+SE br|t|14.878
+M bv:"\"xpath://input[@placeholder='Enter the part number for the legs']\""
+EA bb|Q|bv
+M bw:"text"
+M bx:"'3'"
+EA bw|Q|bx
+M by:"clear"
+EA by|Y|Z
+EE t|j|15.022
+SE br|t|15.022
+M bz:"\"xpath://input[@placeholder='Shipping address']\""
+EA bb|Q|bz
+M bA:"'Address 123'"
+EA bw|Q|bA
+EA by|Y|Z
+EE t|j|15.195
+SE a7|t|15.195
+M bB:"\"xpath://button[@id='order']\""
+EA bb|Q|bB
+EA bd|Y|1
+EE t|j|15.324
+P bC:bf|m|n|e|53
+M bD:"order_successful"
+AS bC|bD|Y|1|15.325
+M bF:"while not order_successful"
+P bE:bF|m|n|e|54
+M bG:"WHILE"
+SE bE|bG|15.325
+M bI:"Step: while not order_successful"
+P bH:bI|m|n|e|54
+M bJ:"WHILE_STEP"
+SE bH|bJ|15.325
+EA bD|Y|1
+M bL:"Selenium.is_element_visible"
+P bK:bL|aE|aF|e|1264
+SE bK|t|15.325
+M bM:"\"xpath://button[@id='order-another']\""
+EA bb|Q|bM
+M bN:"missing_ok"
+EA bN|Y|Z
+P bO:bL|aE|aF|e|1275
+R bO|Y|1|15.342
+EE t|j|15.342
+M bQ:"else (to if browser.is_element_visible(\"xpath://button[@id='order-another']\"))"
+P bP:bQ|m|n|e|55
+M bR:"ELSE_SCOPE"
+SE bP|bR|15.342
+M bT:"Selenium.click_button_when_visible"
+P bS:bT|aE|aF|e|1196
+SE bS|t|15.342
+EA bb|Q|bB
+EA bd|ao|ap
+M bU:"ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (273, 1021)\n  (Session info: chrome=128.0.6613.84)\nStacktrace:\n#0 0x57288423295f <unknown>\n#1 0x572883eeb4dd <unknown>\n#2 0x572883f41888 <unknown>\n#3 0x572883f3f47e <unknown>\n#4 0x572883f3cdc9 <unknown>\n#5 0x572883f3c165 <unknown>\n#6 0x572883f2f8f4 <unknown>\n#7 0x572883f60f52 <unknown>\n#8 0x572883f2f252 <unknown>\n#9 0x572883f6111e <unknown>\n#10 0x572883f80a0e <unknown>\n#11 0x572883f60cd3 <unknown>\n#12 0x572883f2d55d <unknown>\n#13 0x572883f2e2ef <unknown>\n#14 0x5728841fe0a2 <unknown>\n#15 0x572884201486 <unknown>\n#16 0x572884200eca <unknown>\n#17 0x572884201945 <unknown>\n#18 0x5728841ee48b <unknown>\n#19 0x572884201d13 <unknown>\n#20 0x5728841d8a0f <unknown>\n#21 0x572884221807 <unknown>\n#22 0x572884221a4b <unknown>\n#23 0x57288423161a <unknown>\n#24 0x73c7855f439d <unknown>\n#25 0x73c78567949c <unknown>\n"
+STB bU|16.547
+M bV:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/tasks/_task.py"
+M bW:"run"
+M bX:"return self.method(**kwargs)"
+TBE bV|57|bW|bX
+M bY:"self"
+M bZ:"Task"
+M b0:"Task(order_robots_from_RobotSpareBin, status: NOT_RUN)"
+TBV bY|bZ|b0
+TBV F|G|H
+M b1:"sig"
+M b2:"Signature"
+M b3:"<Signature ()>"
+TBV b1|b2|b3
+M b4:"fill_the_form(browser, order)"
+TBE n|102|l|b4
+TBV az|aw|ax
+TBV aI|aJ|aK
+TBV a3|G|a4
+M b5:"browser.wait_and_click_button(\"xpath://button[@id='order']\")"
+TBE n|58|bf|b5
+TBV aI|aJ|aK
+TBV a3|G|a4
+TBV bD|Y|1
+M b6:"click_button_when_visible"
+M b7:"self.click_button(locator, modifier)"
+TBE aF|1210|b6|b7
+TBV bY|aJ|aK
+TBV bb|Q|bB
+TBV bd|ao|ap
+M b8:"click_button"
+M b9:"element.click()"
+TBE ba|603|b8|b9
+M ca:"ElementKeywords"
+M cb:"<SeleniumLibrary.keywords.element.ElementKeywords object at 0x7bfd731bf7f0>"
+TBV bY|ca|cb
+TBV bb|Q|bB
+TBV bd|ao|ap
+M cc:"element"
+M cd:"WebElement"
+M ce:"<selenium.webdriver.remote.webelement.WebElement (session=\"9ac48d04eae52486b55dd8471cd44abe\", element=\"f.222094727ADFF0D5DC76B204997C8E77.d.C3158BA6EE34478185EBD08316C5C4B0.e.37\")>"
+TBV cc|cd|ce
+M cf:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py"
+M cg:"click"
+M ch:"self._execute(Command.CLICK_ELEMENT)"
+TBE cf|93|cg|ch
+TBV bY|cd|ce
+M ci:"_execute"
+M cj:"return self._parent.execute(command, params)"
+TBE cf|394|ci|cj
+TBV bY|cd|ce
+M ck:"command"
+M cl:"'clickElement'"
+TBV ck|Q|cl
+M cm:"params"
+M cn:"{'id': 'f.222094727ADFF0D5DC76B204997C8E77.d.C3158BA6EE34478185EBD08316C5C4B0.e.37'}"
+TBV cm|G|cn
+M co:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"
+M cp:"execute"
+M cq:"self.error_handler.check_response(response)"
+TBE co|347|cp|cq
+M cr:"WebDriver"
+M cs:"<selenium.webdriver.chrome.webdriver.WebDriver (session=\"9ac48d04eae52486b55dd8471cd44abe\")>"
+TBV bY|cr|cs
+M ct:"driver_command"
+TBV ct|Q|cl
+TBV cm|G|H
+M cu:"response"
+M cv:"{'status': 400, 'value': '{\"value\":{\"error\":\"element click intercepted\",\"message\":\"element click intercepted: Element is not clickable at point (273, 1021)\\\\n  (Session info: chrome=128.0.6613.84)\",\"stacktrace\":\"#0 0x57288423295f \\\\u003Cunknown>\\\\n#1 0x572883eeb4dd \\\\u003Cunknown>\\\\n#2 0x572883f41888 \\\\u003Cunknown>\\\\n#3 0x572883f3f47e \\\\u003Cunknown>\\\\n#4 0x572883f3cdc9 \\\\u003Cunknown>\\\\n#5 0x572883f3c165 \\\\u003Cunknown>\\\\n#6 0x572883f2f8f4 \\\\u003Cunknown>\\\\n#7 0x572883f60f52 \\\\u003Cunknown>\\\\n#8 0x572883f2f252 \\\\u003Cunknown>\\\\n#9 0x572883f6111e \\\\u003Cunknown>\\\\n#10 0x572883f80a0e \\\\u003Cunknown>\\\\n#11 0x572883f60cd3 \\\\u003Cunknown>\\\\n#12 0x572883f2d55d \\\\u003Cunknown>\\\\n#13 0x572883f2e2ef \\\\u003Cunknown>\\\\n#14 0x5728841fe0a2 \\\\u003Cunknown>\\\\n#15 0x572884201486 \\\\u003Cunknown>\\\\n#16 0x572884200eca \\\\u003Cunknown>\\\\n#17 0x572884201945 \\\\u003Cunknown>\\\\n#18 0x5728841ee48b \\\\u003Cunknown>\\\\n#19 0x572884201d13 \\\\u003Cunknown>\\\\n#20 0x5728841d8a0f \\\\u003Cunknown>\\\\n#21 0x572884221807 \\\\u003Cunknown>\\\\n#22 0x572884221a4b \\\\u003Cunknown>\\\\n#23 0x57288423161a \\\\u003Cunknown>\\\\n#24 0x73c7855f439d \\\\u003Cunknown>\\\\n#25 0x73c78567949c \\\\u003Cunknown>\\\\n\"}}'}"
+TBV cu|G|cv
+M cw:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py"
+M cx:"check_response"
+M cy:"raise exception_class(message, screen, stacktrace)"
+TBE cw|229|cx|cy
+M cz:"ErrorHandler"
+M cA:"<selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7bfd73b53d00>"
+TBV bY|cz|cA
+TBV cu|G|cv
+M cB:"status"
+M cC:"'element click intercepted'"
+TBV cB|Q|cC
+M cD:"value"
+M cE:"{'error': 'element click intercepted', 'message': 'element click intercepted: Element is not clickable at point (273, 1021)\\n  (Session info: chrome=128.0.6613.84)', 'stacktrace': '#0 0x57288423295f <unknown>\\n#1 0x572883eeb4dd <unknown>\\n#2 0x572883f41888 <unknown>\\n#3 0x572883f3f47e <unknown>\\n#4 0x572883f3cdc9 <unknown>\\n#5 0x572883f3c165 <unknown>\\n#6 0x572883f2f8f4 <unknown>\\n#7 0x572883f60f52 <unknown>\\n#8 0x572883f2f252 <unknown>\\n#9 0x572883f6111e <unknown>\\n#10 0x572883f80a0e <unknown>\\n#11 0x572883f60cd3 <unknown>\\n#12 0x572883f2d55d <unknown>\\n#13 0x572883f2e2ef <unknown>\\n#14 0x5728841fe0a2 <unknown>\\n#15 0x572884201486 <unknown>\\n#16 0x572884200eca <unknown>\\n#17 0x572884201945 <unknown>\\n#18 0x5728841ee48b <unknown>\\n#19 0x572884201d13 <unknown>\\n#20 0x5728841d8a0f <unknown>\\n#21 0x572884221807 <unknown>\\n#22 0x572884221a4b <unknown>\\n#23 0x57288423161a <unknown>\\n#24 0x73c7855f439d <unknown>\\n#25 0x73c78567949c <unknown>\\n'}"
+TBV cD|G|cE
+M cF:"message"
+M cG:"'element click intercepted: Element is not clickable at point (273, 1021)\\n  (Session info: chrome=128.0.6613.84)'"
+TBV cF|Q|cG
+M cH:"screen"
+TBV cH|ao|ap
+M cI:"stacktrace"
+M cJ:"list"
+M cK:"['#0 0x57288423295f <unknown>', '#1 0x572883eeb4dd <unknown>', '#2 0x572883f41888 <unknown>', '#3 0x572883f3f47e <unknown>', '#4 0x572883f3cdc9 <unknown>', '#5 0x572883f3c165 <unknown>', '#6 0x572883f2f8f4 <unknown>', '#7 0x572883f60f52 <unknown>', '#8 0x572883f2f252 <unknown>', '#9 0x572883f6111e <unknown>', '#10 0x572883f80a0e <unknown>', '#11 0x572883f60cd3 <unknown>', '#12 0x572883f2d55d <unknown>', '#13 0x572883f2e2ef <unknown>', '#14 0x5728841fe0a2 <unknown>', '#15 0x572884201486 <unknown>', '#16 0x572884200eca <unknown>', '#17 0x572884201945 <unknown>', '#18 0x5728841ee48b <unknown>', '#19 0x572884201d13 <unknown>', '#20 0x5728841d8a0f <unknown>', '#21 0x572884221807 <unknown>', '#22 0x572884221a4b <unknown>', '#23 0x57288423161a <unknown>', '#24 0x73c7855f439d <unknown>', '#25 0x73c78567949c <unknown>', '']"
+TBV cI|cJ|cK
+M cL:"value_json"
+M cM:"'{\"value\":{\"error\":\"element click intercepted\",\"message\":\"element click intercepted: Element is not clickable at point (273, 1021)\\\\n  (Session info: chrome=128.0.6613.84)\",\"stacktrace\":\"#0 0x57288423295f \\\\u003Cunknown>\\\\n#1 0x572883eeb4dd \\\\u003Cunknown>\\\\n#2 0x572883f41888 \\\\u003Cunknown>\\\\n#3 0x572883f3f47e \\\\u003Cunknown>\\\\n#4 0x572883f3cdc9 \\\\u003Cunknown>\\\\n#5 0x572883f3c165 \\\\u003Cunknown>\\\\n#6 0x572883f2f8f4 \\\\u003Cunknown>\\\\n#7 0x572883f60f52 \\\\u003Cunknown>\\\\n#8 0x572883f2f252 \\\\u003Cunknown>\\\\n#9 0x572883f6111e \\\\u003Cunknown>\\\\n#10 0x572883f80a0e \\\\u003Cunknown>\\\\n#11 0x572883f60cd3 \\\\u003Cunknown>\\\\n#12 0x572883f2d55d \\\\u003Cunknown>\\\\n#13 0x572883f2e2ef \\\\u003Cunknown>\\\\n#14 0x5728841fe0a2 \\\\u003Cunknown>\\\\n#15 0x572884201486 \\\\u003Cunknown>\\\\n#16 0x572884200eca \\\\u003Cunknown>\\\\n#17 0x572884201945 \\\\u003Cunknown>\\\\n#18 0x5728841ee48b \\\\u003Cunknown>\\\\n#19 0x572884201d13 \\\\u003Cunknown>\\\\n#20 0x5728841d8a0f \\\\u003Cunknown>\\\\n#21 0x572884221807 \\\\u003Cunknown>\\\\n#22 0x572884221a4b \\\\u003Cunknown>\\\\n#23 0x57288423161a \\\\u003Cunknown>\\\\n#24 0x73c7855f439d \\\\u003Cunknown>\\\\n#25 0x73c78567949c \\\\u003Cunknown>\\\\n\"}}'"
+TBV cL|Q|cM
+M cN:"json"
+M cO:"module"
+M cP:"<module 'json' from '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/json/__init__.py'>"
+TBV cN|cO|cP
+M cQ:"e"
+M cR:"ErrorCode"
+M cS:"<selenium.webdriver.remote.errorhandler.ErrorCode object at 0x7bfd73b50040>"
+TBV cQ|cR|cS
+M cT:"error_codes"
+M cU:"['ELEMENT_CLICK_INTERCEPTED', 'ELEMENT_IS_NOT_SELECTABLE', 'ELEMENT_NOT_INTERACTABLE', 'ELEMENT_NOT_VISIBLE', 'IME_ENGINE_ACTIVATION_FAILED', 'IME_NOT_AVAILABLE', 'INSECURE_CERTIFICATE', 'INVALID_ARGUMENT', 'INVALID_COOKIE_DOMAIN', 'INVALID_COORDINATES', 'INVALID_ELEMENT_COORDINATES', 'INVALID_ELEMENT_STATE', 'INVALID_SELECTOR', 'INVALID_SESSION_ID', 'INVALID_XPATH_SELECTOR', 'INVALID_XPATH_SELECTOR_RETURN_TYPER', 'JAVASCRIPT_ERROR', 'METHOD_NOT_ALLOWED', 'MOVE_TARGET_OUT_OF_BOUNDS', 'NO_ALERT_OPEN', 'NO_SUCH_COOKIE', 'NO_SUCH_ELEMENT', 'NO_SUCH_FRAME', 'NO_SUCH_SHADOW_ROOT', 'NO_SUCH_WINDOW', 'SCRIPT_TIMEOUT', 'SESSION_NOT_CREATED', 'STALE_ELEMENT_REFERENCE', 'SUCCESS', 'TIMEOUT', 'UNABLE_TO_CAPTURE_SCREEN', 'UNABLE_TO_SET_COOKIE', 'UNEXPECTED_ALERT_OPEN', 'UNKNOWN_COMMAND', 'UNKNOWN_ERROR', 'UNKNOWN_METHOD', 'XPATH_LOOKUP_ERROR']"
+TBV cT|cJ|cU
+M cV:"error_code"
+M cW:"'ELEMENT_CLICK_INTERCEPTED'"
+TBV cV|Q|cW
+M cX:"error_info"
+M cY:"[64, 'element click intercepted']"
+TBV cX|cJ|cY
+M cZ:"exception_class"
+M c0:"type"
+M c1:"<class 'selenium.common.exceptions.ElementClickInterceptedException'>"
+TBV cZ|c0|c1
+M c2:"st_value"
+M c3:"'#0 0x57288423295f <unknown>\\n#1 0x572883eeb4dd <unknown>\\n#2 0x572883f41888 <unknown>\\n#3 0x572883f3f47e <unknown>\\n#4 0x572883f3cdc9 <unknown>\\n#5 0x572883f3c165 <unknown>\\n#6 0x572883f2f8f4 <unknown>\\n#7 0x572883f60f52 <unknown>\\n#8 0x572883f2f252 <unknown>\\n#9 0x572883f6111e <unknown>\\n#10 0x572883f80a0e <unknown>\\n#11 0x572883f60cd3 <unknown>\\n#12 0x572883f2d55d <unknown>\\n#13 0x572883f2e2ef <unknown>\\n#14 0x5728841fe0a2 <unknown>\\n#15 0x572884201486 <unknown>\\n#16 0x572884200eca <unknown>\\n#17 0x572884201945 <unknown>\\n#18 0x5728841ee48b <unknown>\\n#19 0x572884201d13 <unknown>\\n#20 0x5728841d8a0f <unknown>\\n#21 0x572884221807 <unknown>\\n#22 0x572884221a4b <unknown>\\n#23 0x57288423161a <unknown>\\n#24 0x73c7855f439d <unknown>\\n#25 0x73c78567949c <unknown>\\n'"
+TBV c2|Q|c3
+ETB 16.555
+M c4:"ERROR"
+EE t|c4|16.56
+EE bR|c4|16.56
+EE bJ|c4|16.56
+EE bG|c4|16.56
+EE t|c4|16.56
+M c5:"GeneratorExit: "
+STB c5|16.561
+TBE bV|57|bW|bX
+TBV bY|bZ|b0
+TBV F|G|H
+TBV b1|b2|b3
+TBE n|102|l|b4
+TBV az|aw|ax
+TBV aI|aJ|aK
+TBV a3|G|a4
+M c6:"iter_dicts"
+M c7:"yield row"
+TBE ae|833|c6|c7
+TBV bY|aw|ax
+TBV aZ|Y|1
+M c8:"index"
+M c9:"0"
+TBV c8|aR|c9
+M da:"row"
+TBV da|G|a4
+M db:"column"
+M dc:"'Address'"
+TBV db|Q|dc
+ETB 16.563
+EE aY|j|16.564
+EE a2|c4|16.564
+EE aV|c4|16.564
+EE t|c4|16.564
+C r|l|16.565
+M dd:" status: "
+C f|dd|16.566
+M de:"error"
+M df:"FAIL\n"
+C de|df|16.567
+M dg:"\nMessage: element click intercepted: Element is not clickable at point (273, 1021)\n  (Session info: chrome=128.0.6613.84)\nStacktrace:\n#0 0x57288423295f <unknown>\n#1 0x572883eeb4dd <unknown>\n#2 0x572883f41888 <unknown>\n#3 0x572883f3f47e <unknown>\n#4 0x572883f3cdc9 <unknown>\n#5 0x572883f3c165 <unknown>\n#6 0x572883f2f8f4 <unknown>\n#7 0x572883f60f52 <unknown>\n#8 0x572883f2f252 <unknown>\n#9 0x572883f6111e <unknown>\n#10 0x572883f80a0e <unknown>\n#11 0x572883f60cd3 <unknown>\n#12 0x572883f2d55d <unknown>\n#13 0x572883f2e2ef <unknown>\n#14 0x5728841fe0a2 <unknown>\n#15 0x572884201486 <unknown>\n#16 0x572884200eca <unknown>\n#17 0x572884201945 <unknown>\n#18 0x5728841ee48b <unknown>\n#19 0x572884201d13 <unknown>\n#20 0x5728841d8a0f <unknown>\n#21 0x572884221807 <unknown>\n#22 0x572884221a4b <unknown>\n#23 0x57288423161a <unknown>\n#24 0x73c7855f439d <unknown>\n#25 0x73c78567949c <unknown>\n\n"
+C de|dg|16.568
+M dh:"=========== "
+C f|dh|16.568
+M di:"Full Traceback (running "
+C f|di|16.568
+C r|l|16.568
+M dj:")"
+C f|dj|16.569
+M dk:" ===========\n"
+C f|dk|16.569
+M dl:"traceback"
+M dm:"Traceback (most recent call last):\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/tasks/_commands.py\", line 453, in run\n    result = task.run(**kwargs)\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/tasks/_task.py\", line 57, in run\n    return self.method(**kwargs)\n  File \"/home/renan/thoughtful/robocorp_certifs/1/tasks.py\", line 102, in order_robots_from_RobotSpareBin\n    fill_the_form(browser, order)\n  File \"/home/renan/thoughtful/robocorp_certifs/1/tasks.py\", line 58, in fill_the_form\n    browser.wait_and_click_button(\"xpath://button[@id='order']\")\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/RPA/Browser/Selenium.py\", line 1210, in click_button_when_visible\n    self.click_button(locator, modifier)\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/SeleniumLibrary/keywords/element.py\", line 603, in click_button\n    element.click()\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py\", line 93, in click\n    self._execute(Command.CLICK_ELEMENT)\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py\", line 394, in _execute\n    return self._parent.execute(command, params)\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py\", line 347, in execute\n    self.error_handler.check_response(response)\n  File \"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py\", line 229, in check_response\n    raise exception_class(message, screen, stacktrace)\nselenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (273, 1021)\n  (Session info: chrome=128.0.6613.84)\nStacktrace:\n#0 0x57288423295f <unknown>\n#1 0x572883eeb4dd <unknown>\n#2 0x572883f41888 <unknown>\n#3 0x572883f3f47e <unknown>\n#4 0x572883f3cdc9 <unknown>\n#5 0x572883f3c165 <unknown>\n#6 0x572883f2f8f4 <unknown>\n#7 0x572883f60f52 <unknown>\n#8 0x572883f2f252 <unknown>\n#9 0x572883f6111e <unknown>\n#10 0x572883f80a0e <unknown>\n#11 0x572883f60cd3 <unknown>\n#12 0x572883f2d55d <unknown>\n#13 0x572883f2e2ef <unknown>\n#14 0x5728841fe0a2 <unknown>\n#15 0x572884201486 <unknown>\n#16 0x572884200eca <unknown>\n#17 0x572884201945 <unknown>\n#18 0x5728841ee48b <unknown>\n#19 0x572884201d13 <unknown>\n#20 0x5728841d8a0f <unknown>\n#21 0x572884221807 <unknown>\n#22 0x572884221a4b <unknown>\n#23 0x57288423161a <unknown>\n#24 0x73c7855f439d <unknown>\n#25 0x73c78567949c <unknown>\n\n\n"
+C dl|dm|16.571
+M dn:"================================================================================\n"
+C f|dn|16.571
+M do:"FAIL"
+M dp:"Message: element click intercepted: Element is not clickable at point (273, 1021)\n  (Session info: chrome=128.0.6613.84)\nStacktrace:\n#0 0x57288423295f <unknown>\n#1 0x572883eeb4dd <unknown>\n#2 0x572883f41888 <unknown>\n#3 0x572883f3f47e <unknown>\n#4 0x572883f3cdc9 <unknown>\n#5 0x572883f3c165 <unknown>\n#6 0x572883f2f8f4 <unknown>\n#7 0x572883f60f52 <unknown>\n#8 0x572883f2f252 <unknown>\n#9 0x572883f6111e <unknown>\n#10 0x572883f80a0e <unknown>\n#11 0x572883f60cd3 <unknown>\n#12 0x572883f2d55d <unknown>\n#13 0x572883f2e2ef <unknown>\n#14 0x5728841fe0a2 <unknown>\n#15 0x572884201486 <unknown>\n#16 0x572884200eca <unknown>\n#17 0x572884201945 <unknown>\n#18 0x5728841ee48b <unknown>\n#19 0x572884201d13 <unknown>\n#20 0x5728841d8a0f <unknown>\n#21 0x572884221807 <unknown>\n#22 0x572884221a4b <unknown>\n#23 0x57288423161a <unknown>\n#24 0x73c7855f439d <unknown>\n#25 0x73c78567949c <unknown>\n"
+ET do|dp|16.571
+M dr:"Teardown tasks"
+M ds:"teardown"
+P dq:dr|ds|e|e|0
+ST dq|16.572
+M dt:"Process snapshot"
+SPS dt|16.572
+M du:"System information:\nMemory: Total: 7.6 G, Available: 1.5 G, Used: 80.3 %\nCPUs: 8"
+P dv:e|e|e|e|0
+L I|du|dv|0|16.978
+M dw:"Subprocess: chromium (pid: 181244, status: sleeping)\nCommand Line: /usr/lib/chromium/chromium --type=gpu-process --no-sandbox --disable-dev-shm-usage --crashpad-handler-pid=181212 --enable-crash-reporter=,Arch Linux --user-data-dir=/tmp/.org.chromium.Chromium.jYNjYO --change-stack-guard-on-fork=enable --gpu-preferences=UAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files --field-trial-handle=3,i,6288237108818158764,4299798572699643132,262144 --variations-seed-version --log-level=0\nStarted: 13:32:44\nParent pid: 181218\nResident Set Size: 151.2 M\nVirtual Memory Size: 32.7 G"
+L I|dw|dv|0|16.996
+M dx:"OutputToPortThread|Thread ID: 136328480032448 (daemon)"
+STD dx|16.996
+M dy:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/threading.py"
+M dz:"_bootstrap"
+M dA:"self._bootstrap_inner()"
+TBE dy|973|dz|dA
+M dB:"Thread"
+M dC:"<Thread(OutputToPortThread, started daemon 136328480032448)>"
+TBV bY|dB|dC
+M dD:"_bootstrap_inner"
+M dE:"self.run()"
+TBE dy|1016|dD|dE
+TBV bY|dB|dC
+M dF:"self._target(*self._args, **self._kwargs)"
+TBE dy|953|bW|dF
+TBV bY|dB|dC
+M dG:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/tasks/_log_output_setup.py"
+M dH:"write_in_thread"
+M dI:"msg = q.get()"
+TBE dG|73|dH|dI
+M dJ:"msg"
+M dK:"'ST dq|16.565\\n'"
+TBV dJ|Q|dK
+M dL:"client_socket"
+M dM:"socket"
+M dN:"<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 47524), raddr=('127.0.0.1', 33389)>"
+TBV dL|dM|dN
+M dO:"log"
+M dP:"<module 'robocorp.log' from '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/__init__.py'>"
+TBV dO|cO|dP
+M dQ:"port_in_env"
+M dR:"'33389'"
+TBV dQ|Q|dR
+M dS:"q"
+M dT:"Queue"
+M dU:"<queue.Queue object at 0x7bfd73b130a0>"
+TBV dS|dT|dU
+M dV:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/queue.py"
+M dW:"get"
+M dX:"self.not_empty.wait()"
+TBE dV|171|dW|dX
+TBV bY|dT|dU
+M dY:"block"
+TBV dY|Y|Z
+M dZ:"timeout"
+TBV dZ|ao|ap
+M d0:"wait"
+M d1:"waiter.acquire()"
+TBE dy|320|d0|d1
+M d2:"Condition"
+M d3:"<Condition(<unlocked _thread.lock object at 0x7bfd73335ec0>, 1)>"
+TBV bY|d2|d3
+TBV dZ|ao|ap
+M d4:"waiter"
+M d5:"lock"
+M d6:"<locked _thread.lock object at 0x7bfd71c9e180>"
+TBV d4|d5|d6
+M d7:"saved_state"
+TBV d7|ao|ap
+M d8:"gotit"
+TBV d8|Y|1
+ETD 16.998
+M d9:"MainThread|Thread ID: 136328508876608 (non daemon)"
+STD d9|16.998
+M ea:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/__init__.py"
+M eb:"process_snapshot"
+M ec:"robo_logger.process_snapshot()"
+TBE ea|270|eb|ec
+M ed:"logger_instances"
+M ee:"{<robocorp.log._robo_logger._RoboLogger object at 0x7bfd740442b0>: 1, <robocorp.log._robo_logger._RoboLogger object at 0x7bfd73b11ed0>: 1}"
+TBV ed|G|ee
+M ef:"robo_logger"
+M eg:"_RoboLogger"
+M eh:"<robocorp.log._robo_logger._RoboLogger object at 0x7bfd740442b0>"
+TBV ef|eg|eh
+M ei:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/_robo_logger.py"
+M ej:"new_func"
+M ek:"return func(self, *args, **kwargs)"
+TBE ei|20|ej|ek
+TBV bY|eg|eh
+TBV C|D|E
+TBV F|G|H
+M el:"func"
+M em:"function"
+M en:"<function _RoboLogger.process_snapshot at 0x7bfd7303c5e0>"
+TBV el|em|en
+M eo:"return self._robot_output_impl.process_snapshot(hide_vars)"
+TBE ei|416|eb|eo
+TBV bY|eg|eh
+M ep:"hide_vars"
+TBV ep|Y|1
+M eq:"/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/_robo_output_impl.py"
+M er:"self._dump_threads(hide_vars)"
+TBE eq|748|eb|er
+TBV ep|Y|1
+TBV dO|cO|dP
+M es:"entry_id"
+M et:"'ps_2'"
+TBV es|Q|et
+M eu:"entry_type"
+M ev:"'process_snapshot'"
+TBV eu|Q|ev
+M ew:"psutil"
+M ex:"<module 'psutil' from '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/psutil/__init__.py'>"
+TBV ew|cO|ex
+M ey:"AccessDenied"
+M ez:"<class 'psutil.AccessDenied'>"
+TBV ey|c0|ez
+M eA:"NoSuchProcess"
+M eB:"<class 'psutil.NoSuchProcess'>"
+TBV eA|c0|eB
+M eC:"ZombieProcess"
+M eD:"<class 'psutil.ZombieProcess'>"
+TBV eC|c0|eD
+M eE:"curr_process"
+M eF:"Process"
+M eG:"psutil.Process(pid=181082, name='python3.10', status='running', started='13:32:31')"
+TBV eE|eF|eG
+M eH:"log_info"
+M eI:"<function _RoboOutputImpl.process_snapshot.<locals>.log_info at 0x7bfd69f716c0>"
+TBV eH|em|eI
+M eJ:"memory_info"
+M eK:"'Total: 7.6 G, Available: 1.5 G, Used: 80.3 %'"
+TBV eJ|Q|eK
+M eL:"child_i"
+M eM:"9"
+TBV eL|aR|eM
+M eN:"child"
+M eO:"psutil.Process(pid=181244, name='chromium', status='sleeping', started='13:32:44')"
+TBV eN|eF|eO
+M eP:"name"
+M eQ:"'chromium'"
+TBV eP|Q|eQ
+M eR:"'sleeping'"
+TBV cB|Q|eR
+M eS:"create_time"
+M eT:"'13:32:44'"
+TBV eS|Q|eT
+M eU:"ppid"
+M eV:"'181218'"
+TBV eU|Q|eV
+M eW:"cmdline"
+M eX:"'/usr/lib/chromium/chromium --type=gpu-process --no-sandbox --disable-dev-shm-usage --crashpad-handler-pid=181212 --enable-crash-reporter=,Arch Linux --user-data-dir=/tmp/.org.chromium.Chromium.jYNjYO --change-stack-guard-on-fork=enable --gpu-preferences=UAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files --field-trial-handle=3,i,6288237108818158764,4299798572699643132,262144 --variations-seed-version --log-level=0'"
+TBV eW|Q|eX
+M eY:"rss"
+M eZ:"'151.2 M'"
+TBV eY|Q|eZ
+M e0:"vms"
+M e1:"'32.7 G'"
+TBV e0|Q|e1
+M e2:"proc_memory_info"
+M e3:"pmem"
+M e4:"pmem(rss=158572544, vms=35129864192, shared=124346368, text=230715392, lib=0, data=182435840, dirty=0)"
+TBV e2|e3|e4
+M e5:"'Subprocess: chromium (pid: 181244, status: sleeping)\\nCommand Line: /usr/lib/chromium/chromium --type=gpu-process --no-sandbox --disable-dev-shm-usage --crashpad-handler-pid=181212 --enable-crash-reporter=,Arch Linux --user-data-dir=/tmp/.org.chromium.Chromium.jYNjYO --change-stack-guard-on-fork=enable --gpu-preferences=UAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files --field-trial-handle=3,i,6288237108818158764,4299798572699643132,262144 --variations-seed-version --log-level=0\\nStarted: 13:32:44\\nParent pid: 181218\\nResident Set Size: 151.2 M\\nVirtual Memory Size: 32.7 G'"
+TBV cF|Q|e5
+M e6:"_RoboOutputImpl"
+M e7:"<robocorp.log._robo_output_impl._RoboOutputImpl object at 0x7bfd733d0a60>"
+TBV bY|e6|e7
+M e8:"_dump_threads"
+M e9:"stack.append((f, f.f_lineno))"
+TBE eq|769|e8|e9
+TBV bY|e6|e7
+TBV ep|Y|1
+M fa:"thread_id"
+M fb:"136328508876608"
+TBV fa|aR|fb
+M fc:"frame"
+M fd:"<frame at 0x7bfd6b40d840, file '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/_robo_output_impl.py', line 773, code _dump_threads>"
+TBV fc|fc|fd
+M fe:"thread"
+M ff:"_MainThread"
+M fg:"<_MainThread(MainThread, started 136328508876608)>"
+TBV fe|ff|fg
+M fh:"title"
+M fi:"'MainThread|Thread ID: 136328508876608 (non daemon)'"
+TBV fh|Q|fi
+M fj:"f"
+M fk:"<frame at 0x6301c3e7b980, file '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/tasks/_commands.py', line 494, code run>"
+TBV fj|fc|fk
+M fl:"stack"
+M fm:"[(<frame at 0x7bfd70e4b4d0, file '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/__init__.py', line 270, code process_snapshot>, 270), (<frame at 0x7bfd73326a40, file '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/_robo_logger.py', line 20, code new_func>, 20), (<frame at 0x7bfd6a9132a0, file '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/_robo_logger.py', line 416, code process_snapshot>, 416), (<frame at 0x6301c485d120, file '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/_robo_output_impl.py', line 748, code process_snapshot>, 748), (<frame at 0x7bfd6b40d840, file '/home/renan/.robocorp/holotree/8ef9c10_b1f3c24_09529949/lib/python3.10/site-packages/robocorp/log/_robo_output_impl.py', line 773, code _dump_threads>, 769)]"
+TBV fl|cJ|fm
+ETD 17.003
+EPS 17.003
+ET j|e|17.024
+ER c4|17.024
